@@ -26,6 +26,18 @@ const Productdetails = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.user.currentUser);
+  const buildImgSrc = (raw) => {
+    // fallback placeholder in case the product has no image
+    if (!raw) return "/products_images/default_product_image.png";
+    // ^ put that file in front/public/products_images if you don't have one yet
+
+    // raw already contains "http://…" → leave it
+    if (raw.startsWith("http")) return raw;
+
+    // otherwise it's a relative path like "/products_images/iphone15.jpg"
+    // We want the React dev‑server to serve it, so return it untouched
+    return raw;
+  };
 
   const wishlistItems = useSelector((state) => state.wishlist.items || []);
 
@@ -40,25 +52,38 @@ const Productdetails = () => {
   const [newComment, setNewComment] = useState("");
   const [reviews, setReviews] = useState([]);
   const [newReview, setNewReview] = useState({ rating: 5, text: "" });
+  const [otherProducts, setOtherProducts] = useState([]);
 
-  // Fetch product and comments data on mount / id change
+
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [productResponse, commentsResponse] = await Promise.all([
+        /* ── 1. load the current product & its comments in parallel ── */
+        const [productRes, commentsRes] = await Promise.all([
           axios.get(`http://localhost:8085/products/${id}`),
           axios.get(`http://localhost:8085/comments/product/${id}`)
         ]);
-        setProductData(productResponse.data);
-        setComments(commentsResponse.data);
-        console.log("Comments fetched:", commentsResponse.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
+
+        const current = productRes.data;
+        setProductData(current);
+        setComments(commentsRes.data);
+
+        /* ── 2. fetch all products, pick 4 others from the same category ── */
+        const allRes = await axios.get("http://localhost:8085/products/all");
+        const similar = allRes.data
+          .filter(p => p.category === current.category && p.id !== current.id)
+          .slice(0, 4);                     // keep only four
+
+        setOtherProducts(similar);
+      } catch (err) {
+        console.error("Error fetching product‑details data:", err);
       }
     };
 
     fetchData();
   }, [id]);
+
 
   useEffect(() => {
     if (currentUser?.id) {
@@ -75,7 +100,7 @@ const Productdetails = () => {
   }
 
   const isInWishlist = wishlistItems.some(
-      (w) => w.product.id === productData?.id
+    (w) => w.product.id === productData?.id
   );
 
   // Handle "Add to Cart" and then navigate to the cart page
@@ -99,17 +124,17 @@ const Productdetails = () => {
 
     if (isInWishlist) {
       await dispatch(
-          removeFromWishlist({
-            userId: currentUser.id,
-            productId: productData.id,
-          })
+        removeFromWishlist({
+          userId: currentUser.id,
+          productId: productData.id,
+        })
       ).unwrap();
     } else {
       await dispatch(
-          addToWishlist({
-            userId: currentUser.id,
-            productId: productData.id,
-          })
+        addToWishlist({
+          userId: currentUser.id,
+          productId: productData.id,
+        })
       ).unwrap();
     }
   };
@@ -121,7 +146,7 @@ const Productdetails = () => {
   };
 
   const totalPrice = productData.price * quantity;
-const monthlyInstallment = totalPrice / Math.max(parseInt(installment, 10), 1);
+  const monthlyInstallment = totalPrice / Math.max(parseInt(installment, 10), 1);
 
 
   // Define accordion sections
@@ -199,12 +224,7 @@ const monthlyInstallment = totalPrice / Math.max(parseInt(installment, 10), 1);
     }
   };
 
-  const otherProducts = [
-    { id: 1, img: otherProduct1, name: "iPhone 15" },
-    { id: 2, img: otherProduct2, name: "iPhone 14" },
-    { id: 3, img: otherProduct3, name: "iPhone 13" },
-    { id: 4, img: otherProduct4, name: "iPhone 12" },
-  ];
+
 
   // Handle comment submission
   const handleCommentSubmit = async () => {
@@ -243,24 +263,35 @@ const monthlyInstallment = totalPrice / Math.max(parseInt(installment, 10), 1);
     alert("Review submitted!");
     setNewReview({ rating: 5, text: "" });
   };
+
   const handleQuantityChange = (e) => {
-    const val = parseInt(e.target.value, 10);
-    if (!isNaN(val) && val >= 1 && val <= 99) {
-      setQuantity(val);
+    const value = e.target.value;
+
+    // Allow the user to type freely, but only accept non-negative integers
+    if (value === "" || /^\d+$/.test(value)) {
+      setQuantity(value);
     }
   };
-  
 
   const handleQuantityBlur = () => {
-    const num = parseInt(quantity, 10);
-    if (!num || num < 1) {
-      setQuantity("1");
-    } else if (num > 99) {
-      setQuantity("99");
-    } else {
-      setQuantity(String(num));
+    let parsedQuantity = parseInt(quantity, 10);
+
+    // If the quantity is invalid or less than 1, set it to 1
+    if (isNaN(parsedQuantity) || parsedQuantity < 1) {
+      parsedQuantity = 1;
     }
+
+    // If the quantity exceeds the stock, set it to the stock limit
+    if (parsedQuantity > productData.quantity) {
+      parsedQuantity = productData.quantity;
+    }
+
+    // Update the state with the validated quantity
+    setQuantity(parsedQuantity);
   };
+
+
+
 
   return (
     <div className="border-t-1 border-white max-w-screen-xl mx-auto p-4 bg-gradient-to-b from-black to-purple-900">
@@ -278,12 +309,12 @@ const monthlyInstallment = totalPrice / Math.max(parseInt(installment, 10), 1);
         {/* left thumbnails */}
         <div className="flex-shrink-0 w-full md:w-96">
           <div className="flex space-x-2 mb-4">
-            <img src={iphone16Thumb1} alt="" className="w-16 h-16 border rounded"/>
-            <img src={iphone16Thumb2} alt="" className="w-16 h-16 border rounded"/>
-            <img src={iphone16Thumb3} alt="" className="w-16 h-16 border rounded"/>
+            <img src={buildImgSrc(productData.imageUrl)} alt="Thumbnail 1" className="w-16 h-16 border rounded" />
+            <img src={buildImgSrc(productData.imageUrl)} alt="Thumbnail 2" className="w-16 h-16 border rounded" />
+            <img src={buildImgSrc(productData.imageUrl)} alt="Thumbnail 3" className="w-16 h-16 border rounded" />
           </div>
-          <img src={iphone16Image} alt={productData.name}
-               className="w-full h-auto border border-gray-200 rounded"/>
+          <img src={productData.imageUrl} alt={productData.name}
+            className="w-full h-auto border border-gray-200 rounded" />
         </div>
 
         {/* right info */}
@@ -295,12 +326,12 @@ const monthlyInstallment = totalPrice / Math.max(parseInt(installment, 10), 1);
             </h1>
             <button onClick={toggleWishlist} className="focus:outline-none">
               <span
-                  className={
-                      "text-5xl leading-none transition-transform hover:scale-110 " +
-                      (isInWishlist
-                          ? "bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent cursor-pointer"
-                          : "text-gray-300 cursor-pointer")
-                  }>
+                className={
+                  "text-5xl leading-none transition-transform hover:scale-110 " +
+                  (isInWishlist
+                    ? "bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent cursor-pointer"
+                    : "text-gray-300 cursor-pointer")
+                }>
                 {isInWishlist ? "♥" : "♡"}
               </span>
             </button>
@@ -315,19 +346,22 @@ const monthlyInstallment = totalPrice / Math.max(parseInt(installment, 10), 1);
             <p className="text-sm text-gray-700">
               Warranty: <span className="font-medium">{productData.warrantyStatus}</span>
             </p>
+            <p className="text-sm text-gray-700">
+              In Stock: <span className="font-medium">{productData.quantity}</span>
+            </p>
           </div>
-          <div className="flex items-center gap-2 mt-4">
-  <label htmlFor="quantity" className="text-sm font-medium">Quantity:</label>
-  <input
-    type="number"
-    id="quantity"
-    min="1"
-    max="99"
-    value={quantity}
-    onChange={handleQuantityChange}
-    className="w-16 px-2 py-1 border rounded-md"
-  />
-</div>
+
+          <input
+            type="number"
+            id="quantity"
+            min="1"
+            max={productData.quantity}
+            value={quantity}
+            onChange={handleQuantityChange}
+            onBlur={handleQuantityBlur}
+            className="w-16 px-2 py-1 border rounded-md"
+          />
+
 
           <div className="flex items-center space-x-2 mb-4">
             <label htmlFor="installment" className="font-medium">Installments:</label>
@@ -347,15 +381,15 @@ const monthlyInstallment = totalPrice / Math.max(parseInt(installment, 10), 1);
           <div className="text-lg font-bold mb-4">Total: ${totalPrice.toFixed(2)}</div>
           <div className="flex space-x-4">
             <button
-                onClick={handleAddToCart}
-                className="bg-gradient-to-b from-black to-purple-900 text-white font-semibold px-6 py-2 rounded transition cursor-pointer hover:scale-105 hover:brightness-110"
+              onClick={handleAddToCart}
+              className="bg-gradient-to-b from-black to-purple-900 text-white font-semibold px-6 py-2 rounded transition cursor-pointer hover:scale-105 hover:brightness-110"
             >
               Add to Cart
             </button>
 
             <button
-                onClick={handleBuyNow}
-                className="bg-gradient-to-b from-purple-500 to-purple-700 text-white font-semibold px-6 py-2 rounded shadow hover:scale-105 hover:brightness-110 transition cursor-pointer">
+              onClick={handleBuyNow}
+              className="bg-gradient-to-b from-purple-500 to-purple-700 text-white font-semibold px-6 py-2 rounded shadow hover:scale-105 hover:brightness-110 transition cursor-pointer">
               Buy Now
             </button>
 
@@ -366,11 +400,11 @@ const monthlyInstallment = totalPrice / Math.max(parseInt(installment, 10), 1);
       {/* Accordion Sections */}
       <div className="mt-8 border-t border-gray-300 pt-2">
         {accordionSections.map((section, index) => (
-            <div key={index} className="border-b border-gray-200 mb-2">
+          <div key={index} className="border-b border-gray-200 mb-2">
             <button
-                  className="cursor-pointer w-full text-left py-2 px-2 flex items-center justify-between focus:outline-none"
-                  onClick={() => toggleAccordion(index)}
-              >
+              className="cursor-pointer w-full text-left py-2 px-2 flex items-center justify-between focus:outline-none"
+              onClick={() => toggleAccordion(index)}
+            >
               <span className="font-medium text-white">{section.title}</span>
               <span className="text-white">
                 <svg
@@ -402,7 +436,11 @@ const monthlyInstallment = totalPrice / Math.max(parseInt(installment, 10), 1);
               key={product.id}
               className="min-w-[120px] flex flex-col items-center border border-white rounded p-2 transition-transform translate-x-1 translate-y-1 duration-200 hover:scale-105 cursor-pointer"
             >
-              <img src={product.img} alt={product.name} className="w-24 h-24 object-cover mb-2" />
+              <img
+                src={buildImgSrc(product.image_url || product.imageUrl)}   // <‑‑ updated line
+                alt={product.name}
+                className="w-24 h-24 object-cover mb-2"
+              />
               <p className="text-sm text-white">{product.name}</p>
             </div>
           ))}
