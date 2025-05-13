@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11e85a4f-882f-454d-8e6d-aa1d7554bf8c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/cs308project/order/pdf_invoice/AdminInvoiceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/src/pages/admin/AdminInvoiceList.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/pages/admin/Reports.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/pages/admin/Reports.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/pages/admin/SalesManagerHome.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/pages/admin/SalesManagerHome.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/cs308project/Cs308ProjectApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/example/cs308project/Cs308ProjectApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/vite/bin/vite.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/vite/bin/vite.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,10 +63,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.Cs308ProjectApplication.executor": "Run",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "murad",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/kunal/CS308Project/backend",
+    "last_opened_file_path": "C:/Users/murad/Documents/Desktop/Sabanci University/software/project/project_copy3/CS308Project/backend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -109,8 +107,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
-        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.25659.59" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.25659.59" />
       </set>
     </attachedChunks>
   </component>
@@ -145,6 +143,7 @@
       <workItem from="1746465504044" duration="6475000" />
       <workItem from="1746646218185" duration="6303000" />
       <workItem from="1746658203326" duration="5786000" />
+      <workItem from="1746720963428" duration="1229000" />
     </task>
     <servers />
   </component>
