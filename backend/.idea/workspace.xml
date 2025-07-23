@@ -6,12 +6,42 @@
   <component name="ChangeListManager">
     <list default="true" id="11e85a4f-882f-454d-8e6d-aa1d7554bf8c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/cs308project/admin/AdminReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/cs308project/admin/AdminReportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/cs308project/admin/AdminProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/cs308project/admin/AdminProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/cs308project/loginregister/controller/user_controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/cs308project/loginregister/controller/user_controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/cs308project/loginregister/model/register_model.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/cs308project/loginregister/model/register_model.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/cs308project/loginregister/service/register_service.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/cs308project/loginregister/service/register_service.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/node_modules/vite/bin/vite.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/vite/bin/vite.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/cs308project/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/cs308project/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/@reduxjs_toolkit.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/@reduxjs_toolkit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/@reduxjs_toolkit.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/@reduxjs_toolkit.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/_metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/axios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/axios.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/axios.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/chunk-AIL4JQPU.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/chunk-AIL4JQPU.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/chunk-AYRYMX7V.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/chunk-AYRYMX7V.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/chunk-EWTE5DHJ.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/chunk-EWTE5DHJ.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/chunk-EWTE5DHJ.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/chunk-EWTE5DHJ.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/chunk-OZ7Q4TBS.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/chunk-OZ7Q4TBS.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/framer-motion.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/framer-motion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/framer-motion.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/framer-motion.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react-dom.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react-dom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react-dom.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react-dom.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react-dom_client.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react-dom_client.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react-dom_client.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react-dom_client.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react-redux.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react-redux.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react-redux.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react-redux.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react-router-dom.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react-router-dom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react-router-dom.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react-router-dom.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react-slick.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react-slick.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react-slick.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react-slick.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react-toastify.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react-toastify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react-toastify.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react-toastify.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react_jsx-dev-runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react_jsx-dev-runtime.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react_jsx-dev-runtime.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react_jsx-dev-runtime.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react_jsx-runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react_jsx-runtime.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react_jsx-runtime.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../front/node_modules/.vite/deps/react_jsx-runtime.js.map" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,37 +86,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.Cs308ProjectApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/kunal/CS308Project/backend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.Cs308ProjectApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kunal/CS308Project/backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="backend" />
@@ -110,8 +140,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.25659.59" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.25659.59" />
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.189" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.189" />
       </set>
     </attachedChunks>
   </component>
@@ -152,6 +182,8 @@
       <workItem from="1747652546670" duration="2616000" />
       <workItem from="1747896250285" duration="141000" />
       <workItem from="1747897499235" duration="3074000" />
+      <workItem from="1749217133676" duration="2000" />
+      <workItem from="1753285581256" duration="1835000" />
     </task>
     <servers />
   </component>
